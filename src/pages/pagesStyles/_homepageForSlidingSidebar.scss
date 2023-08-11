@@ -1,0 +1,87 @@
+// ! Colors
+// $bg-color: rgb(14, 22, 27); //! dark bg
+$bg-color: rgb(62, 148, 219); //! light bg
+// $dot-color: rgb(200, 193, 219); //! light dots
+$dot-color: rgb(86, 84, 92); //! dark dots
+
+// ! Dimensions
+$dot-size: 1.3px;
+$dot-space: 10px;
+
+.homepage {
+  // display: grid;
+  // grid-template-columns: 4fr 1fr;
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  position: relative;
+  &__workspace {
+    width: 100vw;
+    height: 100vh;
+    // ! Dotted grid - change parameters with the variables above
+    background: linear-gradient(
+          90deg,
+          $bg-color ($dot-space - $dot-size),
+          transparent 1%
+        )
+        center,
+      linear-gradient($bg-color ($dot-space - $dot-size), transparent 1%) center,
+      $dot-color;
+    background-size: $dot-space $dot-space;
+    box-shadow: 5px 5px 10px inset rgba(0, 0, 0, 0.3);
+  }
+  &__sidebar {
+    box-shadow: -5px 1px 10px rgba(0, 0, 0, 0.3);
+    background-color: lightblue;
+    height: 100vh;
+    width: 30rem;
+    position: fixed;
+    right: 0;
+    top: 0;
+    &--container {
+      position: relative;
+      .drag {
+        position: absolute;
+        left: 2rem;
+      }
+      .drag-label {
+        top: 0;
+      }
+      .drag-input {
+        top: 7rem;
+      }
+      .drag-button {
+        top: 14rem;
+      }
+      .drag-image {
+        top: 21rem;
+      }
+    }
+    // position: relative;
+    .sidebar-toggle {
+      position: absolute;
+      top: 50%;
+      left: -2rem;
+      height: 7rem;
+      width: 3rem;
+
+      background-color: lightblue;
+      box-shadow: -5px 1px 6px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      transform: translateY(-50%);
+      z-index: 3;
+      &::after {
+        content: "";
+        height: 4rem;
+        width: 2rem;
+        background: url("../../assets/three-dots.svg") center center/cover
+          no-repeat;
+        position: inherit;
+        z-index: 2;
+        top: 0;
+        left: 0.5rem;
+        transform: translateY(40%);
+      }
+    }
+  }
+}

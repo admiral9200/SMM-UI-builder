@@ -1,0 +1,313 @@
+.documentation-page {
+  background-color: rgb(8, 51, 77);
+  position: relative;
+  &::before {
+    content: "";
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: url("../../assets/dots-bg.svg") center center/cover;
+    height: 120rem;
+    width: 120rem;
+    transform: rotate(-45deg) translate(5rem, -90rem);
+    z-index: 1;
+    opacity: 0.2;
+  }
+  * {
+    color: #fff;
+  }
+  .back-to-top {
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    background-color: #3e94db99;
+    border-radius: 5px;
+    width: 5rem;
+    cursor: pointer;
+    padding: 1rem;
+    transition: all 0.2s linear;
+    z-index: 4;
+    &:hover {
+      transform: scale(1.1);
+      transition: all 0.2s linear;
+    }
+  }
+  &__nav {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    height: max-content;
+    width: 25rem;
+    box-shadow: 0px 0px 20px 1px rgba(62, 148, 219, 0.5);
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 5px 0 0 5px;
+    transform: translate(18rem, -50%);
+    transition: all 0.35s linear;
+    z-index: 4;
+    ul {
+      list-style: none;
+      padding-left: 8rem;
+
+      li {
+        color: #000;
+        margin: 4rem 0;
+        cursor: pointer;
+        font-weight: 500;
+      }
+    }
+    &:hover {
+      transform: translate(0rem, -50%);
+      transition: all 0.25s linear;
+    }
+    ::before {
+      content: "NAVIGATION";
+      position: absolute;
+      top: 50%;
+      left: -7rem;
+      transform: translateY(-50%) rotate(90deg);
+      font-size: 2.5rem;
+      color: #999;
+      font-weight: 600;
+      letter-spacing: 5px;
+    }
+  }
+  &__banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100vh;
+    z-index: 2;
+    > h1 {
+      font-size: 6rem;
+      text-transform: uppercase;
+      z-index: 2;
+    }
+    > p {
+      z-index: 2;
+      font-size: 2rem;
+      line-height: 3.5rem;
+      width: 50%;
+      margin: 0 auto;
+      span {
+        z-index: 2;
+        color: rgb(62, 148, 219);
+        font-size: 2.5rem;
+      }
+      code {
+        z-index: 2;
+        display: inline-block;
+        background-color: rgba(255, 255, 255, 0.5);
+        border-radius: 5px;
+        padding: 0.3rem 1rem;
+        margin: 0 0.5rem;
+      }
+    }
+    &--links {
+      position: fixed;
+      top: 50%;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      transform: translateY(-50%);
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 0 5px 5px 0;
+      height: 30rem;
+      width: 7rem;
+      box-shadow: 0px 0px 20px 1px rgba(62, 148, 219, 0.5);
+      align-items: center;
+      justify-content: space-evenly;
+      z-index: 4;
+      img {
+        width: 4rem;
+        cursor: pointer;
+      }
+    }
+    &--images {
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      img {
+        width: 40%;
+        border-radius: 10px;
+        box-shadow: 0px 0px 20px 1px rgba(62, 148, 219, 0.5);
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          transform: scale(1.2);
+          transition: all 0.3s ease-in-out;
+        }
+      }
+    }
+  }
+  .section-split {
+    width: 60%;
+    margin: 0 auto;
+    padding: 5rem 0;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 5px solid rgba(62, 148, 219, 0.4);
+    z-index: 2;
+  }
+  &__content {
+    * {
+      z-index: 2;
+    }
+    h1 {
+      font-size: 3rem;
+      margin: 1rem 0 2rem 0;
+    }
+    > h1 {
+      font-size: 4rem;
+      text-align: center;
+    }
+
+    > ol {
+      li {
+        margin: 1.5rem 0;
+        p {
+          font-size: 20px;
+          line-height: 30px;
+          a {
+            font-size: 22px;
+            color: rgb(62, 148, 219);
+            cursor: pointer;
+            text-decoration: none;
+          }
+          img {
+            width: 100%;
+            box-shadow: 0px 0px 20px 1px rgba(62, 148, 219, 0.5);
+            margin: 2rem 0;
+          }
+          code {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 5px;
+            padding: 0.2rem 1rem;
+            margin: 0 0.5rem;
+          }
+        }
+      }
+      > li {
+        margin: 4rem 0;
+        &::marker {
+          font-size: 3rem;
+        }
+      }
+    }
+  }
+  &__references {
+    ol {
+      li {
+        p {
+          line-height: 4rem;
+          code {
+            a {
+              color: black;
+            }
+          }
+        }
+      }
+    }
+  }
+  .sidebar-video {
+    width: 100%;
+    margin: 2rem 0;
+  }
+  &__tech-stack {
+    display: flex;
+    align-items: center;
+    flex-direction: row !important;
+    justify-content: space-evenly;
+    img {
+      width: 7rem;
+    }
+  }
+  &__footer {
+    p {
+      font-size: 3rem;
+      text-align: center;
+      code {
+        display: inline-block;
+        background-color: rgba(255, 255, 255, 0.5);
+        border-radius: 5px;
+        padding: 0.3rem 1rem;
+        margin: 0 0.5rem;
+      }
+    }
+    h2 {
+      font-size: 4rem;
+      margin: 5rem 0 -3rem 0;
+    }
+    ol {
+      li {
+        p {
+          text-align: left;
+        }
+        .links {
+          display: flex;
+          align-items: center;
+          justify-content: space-evenly;
+          margin-top: 3rem;
+          width: 50%;
+          a {
+            img {
+              display: inline-block;
+              width: 4rem;
+              box-shadow: none;
+            }
+          }
+        }
+      }
+    }
+  }
+  .section-split.contact-me {
+    border-bottom: none;
+    h1 {
+      text-align: center;
+      font-size: 5rem;
+    }
+    p {
+      font-size: 3rem;
+      text-align: center;
+      margin: 2rem 0;
+      code {
+        display: inline-block;
+        background-color: rgba(255, 255, 255, 0.5);
+        border-radius: 5px;
+        padding: 0.3rem 1rem;
+        margin: 0 0.5rem;
+      }
+    }
+  }
+  &__file-structure {
+    display: grid !important;
+    grid-template-columns: 1fr 2fr;
+    > h1 {
+      text-align: center;
+      font-size: 4rem;
+    }
+    img {
+      width: 100%;
+    }
+    .file-structure-content {
+      h1 {
+        text-align: center;
+        font-size: 5rem;
+        margin-top: 0;
+      }
+      p {
+        font-size: 2rem;
+        line-height: 30px;
+      }
+      li {
+        line-height: 35px;
+      }
+
+      span {
+        color: rgba(62, 148, 219, 1);
+        font-size: 2.2rem;
+      }
+    }
+  }
+}

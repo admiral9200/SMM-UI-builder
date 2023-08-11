@@ -1,0 +1,106 @@
+.configuration-modal {
+  &-wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    h1 {
+      font-weight: 500;
+      margin-bottom: 2rem;
+    }
+  }
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  label {
+    margin-bottom: 0.5rem;
+  }
+  input {
+    width: 100%;
+    height: 3rem;
+    margin: 0.5rem 0;
+    padding: 0 1rem;
+
+    &:active,
+    &:focus {
+      outline: none;
+      // border: none;
+    }
+  }
+  &__position {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  &__bg {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+    input {
+      margin: 0.5rem;
+      cursor: pointer;
+      width: 2.5rem;
+      position: relative;
+      visibility: hidden;
+      &::after {
+        visibility: visible;
+        content: "";
+        position: absolute;
+        top: 0.3rem;
+        left: 0;
+        height: 2.5rem;
+        width: 2.5rem;
+        border-radius: 10rem;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+      }
+      // ! color pallet for the labels
+      &:nth-child(1)::after {
+        background-color: #042a2b;
+      }
+      &:nth-child(2)::after {
+        background-color: #ef7b45;
+      }
+      &:nth-child(3)::after {
+        background-color: #cbef43;
+      }
+      &:nth-child(4)::after {
+        background-color: #c45baa;
+      }
+      &:nth-child(5)::after {
+        background-color: #6c464f;
+      }
+      &:nth-child(6)::after {
+        background-color: #fff;
+      }
+    }
+  }
+  &__btn-group {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    button {
+      background-color: rgb(82, 192, 255);
+      display: flex;
+      padding: 0.5rem 2rem 0.7rem 2rem;
+      border-radius: 10rem;
+      text-transform: uppercase;
+      font-size: 1.6rem;
+      font-weight: 500;
+      &:nth-child(2) {
+        background-color: rgb(255, 151, 151);
+      }
+    }
+  }
+  .aspect-ratio-checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    input {
+      width: 2rem !important;
+      cursor: pointer;
+    }
+  }
+}

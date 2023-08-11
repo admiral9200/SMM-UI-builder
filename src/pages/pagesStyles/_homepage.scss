@@ -1,0 +1,141 @@
+// ! Colors
+$bg-color-dark: rgb(8, 51, 77); //! dark bg
+$bg-color: rgb(62, 148, 219); //! light bg
+$dot-color-dark: rgb(200, 193, 219); //! light dots
+$dot-color: rgb(47, 45, 51); //! dark dots
+
+// ! Dimensions
+$dot-size: 1px;
+$dot-space: 9px;
+
+.homepage {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  height: 100vh;
+  overflow: hidden;
+  .toggle-background {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 100%;
+    // box-shadow: 0px 3px 10px white;
+    > div {
+      display: flex;
+      align-items: center;
+    }
+    a {
+      font-size: 2.5rem;
+      font-weight: 500;
+      text-decoration: none;
+      color: $bg-color-dark;
+      padding: 1rem 2rem;
+      margin-right: 3rem;
+      border: 1px solid $bg-color-dark;
+      transition: all 0.3s linear;
+      border-radius: 5px;
+      &:hover {
+        background-color: $bg-color-dark;
+        color: #fff;
+        transition: all 0.2s linear;
+      }
+    }
+  }
+  .toggle-dark-mode {
+    display: block;
+    width: 4rem;
+    margin: 1.5rem;
+    cursor: pointer;
+    text-shadow: 1px 4px 4px 4px white;
+  }
+  position: relative;
+  .bin {
+    box-shadow: -5px 1px 10px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 200px;
+    width: 200px;
+    background-color: rgba(255, 53, 53, 0.6);
+    z-index: 10;
+    border-radius: 30rem 0 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      width: 20%;
+      opacity: 0.5;
+      transform: translate(2rem, 2rem);
+    }
+  }
+  &__workspace--light {
+    transition: all 0.3s linear;
+    // ! Dotted grid - change parameters with the variables above
+    background: linear-gradient(
+          90deg,
+          $bg-color ($dot-space - $dot-size),
+          transparent 1%
+        )
+        center,
+      linear-gradient($bg-color ($dot-space - $dot-size), transparent 1%) center,
+      $dot-color;
+    background-size: $dot-space $dot-space;
+    box-shadow: 5px 5px 10px inset rgba(0, 0, 0, 0.3);
+    &-no-grid {
+      background: $bg-color !important;
+    }
+  }
+  &__workspace--dark {
+    transition: all 0.3s linear;
+    // ! Dotted grid - change parameters with the variables above
+    background: linear-gradient(
+          90deg,
+          $bg-color-dark ($dot-space - $dot-size),
+          transparent 1%
+        )
+        center,
+      linear-gradient($bg-color-dark ($dot-space - $dot-size), transparent 1%)
+        center,
+      $dot-color-dark;
+    background-size: $dot-space $dot-space;
+    box-shadow: 5px 5px 10px inset rgba(0, 0, 0, 0.3);
+    &-no-grid {
+      background: $bg-color-dark !important;
+    }
+  }
+  &__sidebar {
+    box-shadow: -5px 1px 10px rgba(0, 0, 0, 0.3);
+    background-color: lightblue;
+    &--container {
+      position: relative;
+      .drag {
+        position: absolute;
+        left: 2rem;
+      }
+      .drag-label {
+        top: 0;
+      }
+      .drag-input {
+        top: 7rem;
+      }
+      .drag-button {
+        top: 14rem;
+      }
+      .drag-image {
+        top: 21rem;
+      }
+    }
+    position: relative;
+    .sidebar-toggle {
+      position: absolute;
+      top: 50%;
+      left: 3rem;
+      height: 4rem;
+      width: 2rem;
+      background: url("../../assets/three-dots.svg") center center/cover
+        no-repeat;
+      cursor: pointer;
+      transform: translateY(50%);
+    }
+  }
+}
