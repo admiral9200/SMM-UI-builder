@@ -1,17 +1,13 @@
 import React from "react";
 import { Route, Switch } from "react-router";
-import Documentation from "./pages/Documentation";
-import Homepage from "./pages/Homepage";
+import WorkSpace from "./pages/WorkSpace";
 import "./pages/pagesStyles/app.scss";
 const App = () => {
   return (
     <div className="App">
       <Switch>
-        <Route path="/documentation">
-          <Documentation />
-        </Route>
         <Route path="/">
-          <Homepage />
+          <WorkSpace />
         </Route>
       </Switch>
     </div>

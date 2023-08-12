@@ -7,7 +7,7 @@ const FadingBackground = styled(BaseModalBackground)`
   top: 0px !important;
   left: 0px !important;
   width: 100vw !important;
-  z-index: 100;
+  z-index: 99999;
 `;
 
 const StyledModal = Modal.styled`
